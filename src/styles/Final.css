@@ -1,0 +1,140 @@
+.final-container{
+  height:100vh;
+  width:100%;
+  position:relative;
+  overflow:hidden;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  background: radial-gradient(circle at center, #1a1a2e, #0f0f1a);
+}
+
+/* 💖 Glow background */
+.final-container::before{
+  content:"";
+  position:absolute;
+  width:700px;
+  height:700px;
+  background: radial-gradient(circle, rgba(255,105,180,0.4), transparent);
+  filter: blur(150px);
+}
+
+/* 🎆 FIREWORKS (REAL BURST LOOK) */
+.fireworks span{
+  position:absolute;
+  width:6px;
+  height:6px;
+  background: pink;
+  border-radius:50%;
+
+  animation: explode 1.5s ease-out infinite;
+}
+
+.fireworks span:nth-child(odd){
+  background: gold;
+}
+
+.fireworks span:nth-child(1){ top:20%; left:30%; }
+.fireworks span:nth-child(2){ top:25%; left:70%; }
+.fireworks span:nth-child(3){ top:60%; left:20%; }
+.fireworks span:nth-child(4){ top:70%; left:80%; }
+.fireworks span:nth-child(5){ top:40%; left:50%; }
+.fireworks span:nth-child(6){ top:10%; left:60%; }
+
+@keyframes explode{
+  0%{
+    transform: scale(0);
+    opacity:1;
+    box-shadow:0 0 10px white;
+  }
+  100%{
+    transform: scale(12);
+    opacity:0;
+    box-shadow:0 0 30px pink;
+  }
+}
+
+/* 💖 Floating Hearts */
+.hearts-bg span{
+  position:absolute;
+  bottom:-50px;
+  font-size:22px;
+
+  animation: floatHearts linear infinite;
+}
+
+.hearts-bg span:nth-child(odd){
+  animation-duration: 6s;
+}
+.hearts-bg span:nth-child(even){
+  animation-duration: 9s;
+}
+
+@keyframes floatHearts{
+  0%{
+    transform:translateY(0) scale(0.8);
+    opacity:1;
+  }
+  100%{
+    transform:translateY(-110vh) scale(1.2);
+    opacity:0;
+  }
+}
+
+/* ✨ MAIN CARD */
+.final-card{
+  position:relative;
+  z-index:2;
+
+  width:90%;
+  max-width:650px;
+
+  padding:50px;
+  border-radius:25px;
+
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(15px);
+
+  text-align:center;
+
+  box-shadow:0 20px 80px rgba(255,105,180,0.4);
+}
+
+/* 🎉 Title */
+.final-title{
+  font-size:36px;
+  margin-bottom:25px;
+  color:white;
+}
+
+/* 💌 Message */
+.final-text{
+  font-size:18px;
+  line-height:1.8;
+  white-space:pre-line;
+  color:white;
+}
+
+/* ✨ Cursor */
+.cursor{
+  animation: blink 1s infinite;
+}
+
+@keyframes blink{
+  50%{opacity:0;}
+}
+
+/* 🎉 Emojis floating */
+.emoji-row{
+  margin-top:25px;
+  font-size:30px;
+  animation: floatEmoji 3s ease-in-out infinite;
+}
+
+@keyframes floatEmoji{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
+  100%{transform:translateY(0);}
+}

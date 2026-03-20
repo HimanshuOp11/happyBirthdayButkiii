@@ -1,0 +1,156 @@
+.cake-container {
+  position: relative;
+  width: 320px;
+  margin: 20px auto; /* reduced from 50px */
+  text-align: center;
+  z-index: 20;
+}
+
+.cake-container {
+  position: relative;
+  width: 320px;
+  margin: 80px auto 10px auto;
+  text-align: center;
+  z-index: 20;
+}
+
+/* Cake Layers */
+.cake {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  margin: 0 auto;
+}
+
+.cake-layer {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.cake-bottom {
+  height: 100px;
+  background: linear-gradient(to top, #ff6b81, #ff9a9e);
+  position: absolute;
+  bottom: 0;
+}
+
+.cake-top {
+  height: 50px;
+  background: linear-gradient(to top, #ffe066, #ffda77);
+  position: absolute;
+  bottom: 100px;
+  width: 80%;
+  left: 10%;
+}
+
+/* Candles */
+.candles {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+}
+
+.candle {
+  width: 10px;
+  height: 30px;
+  background: #fff;
+  border-radius: 3px;
+  position: relative;
+}
+
+/* Flame */
+.flame {
+  width: 10px;
+  height: 15px;
+  background: radial-gradient(circle, yellow 0%, orange 70%);
+  border-radius: 50%;
+  position: absolute;
+  top: -15px;
+  left: 0;
+  animation: flicker 0.3s infinite alternate;
+}
+
+@keyframes flicker {
+  0% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2) translateY(-2px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Smoke */
+.smoke {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -10px;
+
+  width: 40px;
+  height: 80px;
+
+  background: radial-gradient(
+    circle,
+    rgba(220, 220, 220, 0.9) 0%,
+    rgba(200, 200, 200, 0.7) 40%,
+    rgba(200, 200, 200, 0) 80%
+  );
+
+  border-radius: 50%;
+  animation: smokeRise 2.5s ease-out forwards;
+}
+
+@keyframes smokeRise {
+  0% {
+    transform: translateX(-50%) translateY(0) scale(0.8);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(-40px) scale(1.2);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(-90px) scale(1.6);
+    opacity: 0;
+  }
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-80px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+.wish-msg {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #ff4e50;
+  margin-top: 8px; /* reduced spacing */
+}
+
+.candle-blown {
+  width: 12px;
+  height: 5px;
+  background: #ddd;
+  border-radius: 2px;
+  position: absolute;
+  top: -5px;
+  left: 0;
+}
