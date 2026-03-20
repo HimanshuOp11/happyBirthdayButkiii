@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "../styles/final.css";
+import "../styles/Final.css";
 import confetti from "canvas-confetti";
 
 export default function FinalMessage() {
